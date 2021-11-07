@@ -11,7 +11,7 @@ import java.util.*
 
 const val DATE_KEY = "dateKey"
 
-class DateFragment : Fragment() {
+class DateFragment : Fragment() , DatePickerDialog.DatePickerCallBack{
 
     private lateinit var dateTv : TextView
     private lateinit var dateBtn : Button
@@ -57,6 +57,12 @@ class DateFragment : Fragment() {
 
         }
 
+    }
+
+    override fun onDateSelected(date: Date) {
+        dateBtn.text = date.toString()
+
+        dateTv.text = date.toString()
     }
 
 
